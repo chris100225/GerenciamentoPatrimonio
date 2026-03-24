@@ -1,4 +1,16 @@
+using DotNetEnv;
+using GerenciamentoPatrimonio.Contexts;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+//carregando o .Env
+Env.Load();
+
+//pegando a connection string
+string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+
+//CONEXÃO COM O BANCO
+builder.Services.AddDbContext<GerenciamentoPatrimonioContext>(options=>options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
