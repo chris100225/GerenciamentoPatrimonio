@@ -6,5 +6,11 @@ namespace GerenciamentoPatrimonio.Interfaces
     {
         List<Area> Listar();
 
+        Area BuscarPorID(Guid id);
+        Area BuscarPorNome(string nomeArea);
+        
+        void Adicionar(Area area);
+
+        void Atualizar(Area area);
     }
 }
