@@ -56,10 +56,19 @@ namespace GerenciamentoPatrimonio.Applications.Services
         {
             Validar.ValidarNome(criarDTO.NomeLocal);
 
+            Localizacao localExistente = _repository.BuscarPorNome(criarDTO.NomeLocal, criarDTO.AreaID);
+
+            if (localExistente!=null)
+            {
+                throw new DomainException("Já existe um local cadastrado com esse nome na área");
+            }
+
             if (!_repository.AreaExiste(criarDTO.AreaID))
             {
                 throw new DomainException("Área informada não existe");
             }
+
+
 
             Localizacao localizacao = new Localizacao
             {
@@ -75,6 +84,14 @@ namespace GerenciamentoPatrimonio.Applications.Services
         public void Atualizar(Guid localID, CriarLocalizacaoDTO attDTO)
         {
             Validar.ValidarNome(attDTO.NomeLocal);
+
+
+            Localizacao localExistente = _repository.BuscarPorNome(attDTO.NomeLocal, attDTO.AreaID);
+
+            if (localExistente != null)
+            {
+                throw new DomainException("Já existe um local cadastrado com esse nome na área");
+            }
 
             Localizacao localBanco = _repository.BuscarPorId(localID);
 
