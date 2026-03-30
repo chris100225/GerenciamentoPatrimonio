@@ -10,7 +10,5 @@ namespace GerenciamentoPatrimonio.DTO.CidadeDTO
 
         public string Estado { get; set; } = string.Empty;
 
-        public Guid BairroID {  get; set; }
-
     }
 }

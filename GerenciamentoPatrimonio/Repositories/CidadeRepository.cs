@@ -23,42 +23,35 @@ namespace GerenciamentoPatrimonio.Repositories
             return _context.Cidade.Find(cidadeId);
         }
 
+        public Cidade BuscarPorNomeEEstado(string nomeCidade, string nomeEstado)
+        {
+            return _context.Cidade.FirstOrDefault(cidadeBanco => cidadeBanco.Estado == nomeEstado && cidadeBanco.NomeCidade == nomeCidade);
+        }
 
-        //public void Adicionar(Localizacao localizacao)
-        //{
-        //    _context.Localizacao.Add(localizacao);
-        //    _context.SaveChanges();
-        //}
+        public void Adicionar(Cidade cidade)
+        {
+            _context.Cidade.Add(cidade);
+            _context.SaveChanges();
+        }
 
-        //public bool AreaExiste(Guid areaId)
-        //{
-        //    return _context.Area.Any(area => area.AreaID == areaId);
-        //}
+        public void Atualizar(Cidade cidade)
+        {
 
-        //public void Atualizar(Localizacao localizacao)
-        //{
-        //    if (localizacao == null)
-        //    {
-        //        return;
-        //    }
+            if (cidade == null)
+            {
+                return;
+            }
 
-        //    Localizacao localBanco = _context.Localizacao.Find(localizacao.LocalizacaoID);
+            Cidade cidadeBanco = _context.Cidade.Find(cidade.CidadeID);
 
-        //    if (localizacao == null)
-        //    {
-        //        return;
-        //    }
+            if (cidade == null)
+            {
+                return;
+            }
 
-        //    localBanco.NomeLocal = localizacao.NomeLocal;
-        //    localBanco.LocalSAP = localizacao.LocalSAP;
-        //    localBanco.DescricaoSAP = localizacao.DescricaoSAP;
-        //    localBanco.AreaID = localizacao.AreaID;
-        //    _context.SaveChanges();
-        //}
-
-        //public Localizacao BuscarPorNome(string nomeLocal, Guid areaId)
-        //{
-        //    return _context.Localizacao.FirstOrDefault(local => local.NomeLocal.ToLower() == nomeLocal.ToLower() && local.AreaID == areaId);
-        //}
+            cidadeBanco.NomeCidade = cidade.NomeCidade;
+            cidadeBanco.Estado = cidade.Estado;
+            _context.SaveChanges();
+        }
     }
 }
