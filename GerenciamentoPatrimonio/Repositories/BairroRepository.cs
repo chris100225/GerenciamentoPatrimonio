@@ -17,53 +17,48 @@ namespace GerenciamentoPatrimonio.Repositories
 
         public List<Bairro> Listar()
         {
-            return _context.Bairro.OrderBy(bairro=>bairro.NomeBairro).ToList();
+            return _context.Bairro.OrderBy(bairro => bairro.NomeBairro).ToList();
         }
 
         public Bairro BuscarPorID(Guid bairroId)
+        {
+            return _context.Bairro.Find(bairroId);
+        }
+
+        public void Adicionar(Bairro bairro)
+        {
+            _context.Bairro.Add(bairro);
+            _context.SaveChanges();
+        }
+
+        public void Atualizar(Bairro bairro)
+        {
+            if (bairro == null)
+            {
+                return;
+            }
+
+            Bairro bairroBanco = _context.Bairro.Find(bairro.BairroID);
+
+            if (bairro == null)
+            {
+                return;
+            }
+
+            bairroBanco.NomeBairro = bairro.NomeBairro;
+            bairroBanco.Cidade = bairro.Cidade;
+
+            _context.SaveChanges();
+        }
+
+        public Bairro BuscarPorNome(string nomeBairro, Guid cidadeID)
+        {
+            return _context.Bairro.FirstOrDefault(bairroBanco => bairroBanco.CidadeID == cidadeID && bairroBanco.NomeBairro == nomeBairro);
+        }
+
+        public bool CidadeExiste(Guid cidadeId)
+        {
+            return _context.Cidade.Any(cidade => cidade.CidadeID == cidadeId);
+        }
     }
-}
-
-
-
-public Localizacao BuscarPorId(Guid localizacaoId)
-{
-    return _context.Localizacao.Find(localizacaoId);
-}
-
-public void Adicionar(Localizacao localizacao)
-{
-    _context.Localizacao.Add(localizacao);
-    _context.SaveChanges();
-}
-
-public bool AreaExiste(Guid areaId)
-{
-    return _context.Area.Any(area => area.AreaID == areaId);
-}
-
-public void Atualizar(Localizacao localizacao)
-{
-    if (localizacao == null)
-    {
-        return;
-    }
-
-    Localizacao localBanco = _context.Localizacao.Find(localizacao.LocalizacaoID);
-
-    if (localizacao == null)
-    {
-        return;
-    }
-
-    localBanco.NomeLocal = localizacao.NomeLocal;
-    localBanco.LocalSAP = localizacao.LocalSAP;
-    localBanco.DescricaoSAP = localizacao.DescricaoSAP;
-    localBanco.AreaID = localizacao.AreaID;
-    _context.SaveChanges();
-}
-
-public Localizacao BuscarPorNome(string nomeLocal, Guid areaId)
-{
-    return _context.Localizacao.FirstOrDefault(local => local.NomeLocal.ToLower() == nomeLocal.ToLower() && local.AreaID == areaId);
 }

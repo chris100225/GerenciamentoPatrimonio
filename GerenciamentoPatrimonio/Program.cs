@@ -13,7 +13,7 @@ Env.Load();
 string connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
 
 //CONEXÃO COM O BANCO
-builder.Services.AddDbContext<GerenciamentoPatrimonioContext>(options=>options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<GerenciamentoPatrimonioContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
 
@@ -26,6 +26,18 @@ builder.Services.AddSwaggerGen();
 //Áreas
 builder.Services.AddScoped<IAreaRepository, AreaRepository>();
 builder.Services.AddScoped<AreaService>();
+
+//Endereco
+builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+builder.Services.AddScoped<EnderecoService>();
+
+//Usuários
+builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped<UsuarioService>();
+
+//Bairros
+builder.Services.AddScoped<IBairroRepository, BairroRepository>();
+builder.Services.AddScoped<BairroService>();
 
 //Cidades
 builder.Services.AddScoped<ICidadeRepository, CidadeRepository>();
