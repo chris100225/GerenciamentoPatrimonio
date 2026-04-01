@@ -1,6 +1,7 @@
 using DotNetEnv;
 using GerenciamentoPatrimonio.Applications.Services;
 using GerenciamentoPatrimonio.Contexts;
+using GerenciamentoPatrimonio.Domains;
 using GerenciamentoPatrimonio.Interfaces;
 using GerenciamentoPatrimonio.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -26,6 +27,18 @@ builder.Services.AddSwaggerGen();
 //Áreas
 builder.Services.AddScoped<IAreaRepository, AreaRepository>();
 builder.Services.AddScoped<AreaService>();
+
+//Áreas
+builder.Services.AddScoped<IStatusPatrimonioRepository, StatusPatrimonioRepository>();
+builder.Services.AddScoped<StatusPatrimonioService>();
+
+//Cargo
+builder.Services.AddScoped<ICargoRepository, CargoRepository>();
+builder.Services.AddScoped<CargoService>();
+
+//Tipo Usuário
+builder.Services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
+builder.Services.AddScoped<TipoUsuarioService>();
 
 //Endereco
 builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();

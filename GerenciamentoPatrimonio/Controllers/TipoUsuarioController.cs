@@ -1,8 +1,7 @@
 ﻿using GerenciamentoPatrimonio.Applications.Services;
-using GerenciamentoPatrimonio.DTO.EnderecoDTO;
-using GerenciamentoPatrimonio.DTO.LocalizacaoDTO;
+using GerenciamentoPatrimonio.DTO.AreaDTO;
+using GerenciamentoPatrimonio.DTO.TipoUsuarioDTO;
 using GerenciamentoPatrimonio.Exceptions;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,58 +9,60 @@ namespace GerenciamentoPatrimonio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EnderecoController : ControllerBase
+    public class TipoUsuarioController : ControllerBase
     {
+        private readonly TipoUsuarioService _service;
 
-
-        private readonly EnderecoService _service;
-
-        public EnderecoController(EnderecoService service)
+        public TipoUsuarioController(TipoUsuarioService service)
         {
             _service = service;
         }
 
-        //[Authorize]
         [HttpGet]
-        public ActionResult<List<ListarEnderecoDTO>> Listar()
+        public ActionResult<List<ListarTipoUsuarioDTO>> Listar()
         {
-            List<ListarEnderecoDTO> enderecos = _service.Listar();
-            return Ok(enderecos);
+            List<ListarTipoUsuarioDTO> tipos = _service.Listar();
+            return Ok(tipos);
         }
 
-        //[Authorize]
+
         [HttpGet("{id}")]
-        public ActionResult<ListarEnderecoDTO> BuscarPorId(Guid id)
+        public ActionResult<ListarTipoUsuarioDTO> BuscarPorID(Guid id)
         {
             try
             {
-                ListarEnderecoDTO endereco = _service.BuscarPorId(id);
-                return Ok(endereco);
+                ListarTipoUsuarioDTO tipo = _service.BuscarPorID(id);
+
+                return Ok(tipo);
             }
             catch (DomainException ex)
             {
+
                 return NotFound(ex.Message);
             }
+
         }
 
-        //[Authorize(Roles = "Coordenador")]
         [HttpPost]
-        public ActionResult Adicionar(CriarEnderecoDTO dto)
+
+        public ActionResult Adicionar(CriarTipoUsuarioDTO criarDTO)
         {
             try
             {
-                _service.Adicionar(dto);
+                _service.Adicionar(criarDTO);
                 return Created();
             }
             catch (DomainException ex)
             {
-                return BadRequest(ex.Message);
+
+                return BadRequest();
             }
         }
 
-        //[Authorize(Roles = "Coordenador")]
+
         [HttpPut("{id}")]
-        public ActionResult Atualizar(Guid id, CriarEnderecoDTO dto)
+
+        public ActionResult Atualizar(Guid id, CriarTipoUsuarioDTO dto)
         {
             try
             {
@@ -70,6 +71,7 @@ namespace GerenciamentoPatrimonio.Controllers
             }
             catch (DomainException ex)
             {
+
                 return BadRequest(ex.Message);
             }
         }
