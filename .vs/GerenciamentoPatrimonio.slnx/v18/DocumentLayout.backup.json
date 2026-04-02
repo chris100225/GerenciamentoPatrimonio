@@ -7,12 +7,16 @@
       "RelativeMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|solutionrelative:gerenciamentopatrimonio\\applications\\services\\patrimonioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|c:\\users\\42332992820\\documents\\gerenciamentopatrimonio\\gerenciamentopatrimonio\\controllers\\patrimoniocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|solutionrelative:gerenciamentopatrimonio\\controllers\\patrimoniocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|c:\\users\\42332992820\\documents\\gerenciamentopatrimonio\\gerenciamentopatrimonio\\applications\\services\\areaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|solutionrelative:gerenciamentopatrimonio\\applications\\services\\areaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|c:\\users\\42332992820\\documents\\gerenciamentopatrimonio\\gerenciamentopatrimonio\\repositories\\patrimoniorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|solutionrelative:gerenciamentopatrimonio\\repositories\\patrimoniorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|c:\\users\\42332992820\\documents\\gerenciamentopatrimonio\\gerenciamentopatrimonio\\controllers\\patrimoniocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|solutionrelative:gerenciamentopatrimonio\\controllers\\patrimoniocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AD120A92-C5CF-5A77-F0DA-0EDC074028E8}|GerenciamentoPatrimonio\\GerenciamentoPatrimonio.csproj|c:\\users\\42332992820\\documents\\gerenciamentopatrimonio\\gerenciamentopatrimonio\\controllers\\tipopatrimoniocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TipoPatrimonioController.cs",
               "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Controllers\\TipoPatrimonioController.cs",
               "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Controllers\\TipoPatrimonioController.cs",
@@ -43,46 +47,19 @@
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwBQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-02T11:53:18.351Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PatrimonioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
-              "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
-              "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
-              "RelativeToolTip": "GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAYwBkAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T13:43:20.916Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Program.cs",
-              "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Program.cs",
-              "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Program.cs",
-              "RelativeToolTip": "GerenciamentoPatrimonio\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T13:42:39.585Z",
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "PatrimonioController.cs",
-              "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
-              "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
-              "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
-              "RelativeToolTip": "GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAIA2wCgAAAANAAAAAAAAAA==",
+              "Title": "AreaService.cs",
+              "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Applications\\Services\\AreaService.cs",
+              "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Applications\\Services\\AreaService.cs",
+              "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Applications\\Services\\AreaService.cs",
+              "RelativeToolTip": "GerenciamentoPatrimonio\\Applications\\Services\\AreaService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwD8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-02T13:38:44.87Z",
+              "WhenOpened": "2026-04-02T14:44:05.879Z",
               "EditorCaption": ""
             },
             {
@@ -93,10 +70,47 @@
               "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Applications\\Services\\PatrimonioService.cs",
               "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Applications\\Services\\PatrimonioService.cs",
               "RelativeToolTip": "GerenciamentoPatrimonio\\Applications\\Services\\PatrimonioService.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAWwJ8AAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAgwGEAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-02T13:20:09.448Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PatrimonioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
+              "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
+              "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
+              "RelativeToolTip": "GerenciamentoPatrimonio\\Repositories\\PatrimonioRepository.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAcwDgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T13:43:20.916Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Program.cs",
+              "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Program.cs",
+              "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Program.cs",
+              "RelativeToolTip": "GerenciamentoPatrimonio\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T13:42:39.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PatrimonioController.cs",
+              "DocumentMoniker": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
+              "RelativeDocumentMoniker": "GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
+              "ToolTip": "C:\\Users\\42332992820\\Documents\\GerenciamentoPatrimonio\\GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
+              "RelativeToolTip": "GerenciamentoPatrimonio\\Controllers\\PatrimonioController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAIA2wCgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-02T13:38:44.87Z"
             }
           ]
         }

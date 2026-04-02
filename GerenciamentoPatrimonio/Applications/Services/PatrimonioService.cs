@@ -34,6 +34,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
             return patrimonioDTO;
         }
 
+
         public ListarPatrimonioDTO BuscarPorID(Guid patrimonioID)
         {
             Patrimonio patrimonio = _repository.BuscarPorID(patrimonioID);
@@ -94,6 +95,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
                 TipoPatrimonioID = criarDTO.TipoPatrimonioID,
                 StatusPatrimonioID = criarDTO.StatusPatrimonioID
             };
+            _repository.Adicionar(patrimonio);
 
         }
 
