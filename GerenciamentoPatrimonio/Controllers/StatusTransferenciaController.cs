@@ -1,7 +1,5 @@
 ﻿using GerenciamentoPatrimonio.Applications.Services;
-using GerenciamentoPatrimonio.DTO.CargoDTO;
-using GerenciamentoPatrimonio.DTO.StatusPatrimonioDTO;
-using GerenciamentoPatrimonio.DTO.TipoUsuarioDTO;
+using GerenciamentoPatrimonio.DTO.StatusTransferenciaDTO;
 using GerenciamentoPatrimonio.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,31 +8,31 @@ namespace GerenciamentoPatrimonio.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class StatusPatrimonioController : ControllerBase
+    public class StatusTransferenciaController : ControllerBase
     {
-        private readonly StatusPatrimonioService _service;
+        private readonly StatusTransferenciaService _service;
 
-        public StatusPatrimonioController(StatusPatrimonioService service)
+        public StatusTransferenciaController(StatusTransferenciaService service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public ActionResult<List<ListarStatusPatrimonioDTO>> Listar()
+        public ActionResult<List<ListarStatusTransferenciaDTO>> Listar()
         {
-            List<ListarStatusPatrimonioDTO> statusP = _service.Listar();
-            return Ok(statusP);
+            List<ListarStatusTransferenciaDTO> statusT = _service.Listar();
+            return Ok(statusT);
         }
 
 
         [HttpGet("{id}")]
-        public ActionResult<ListarStatusPatrimonioDTO> BuscarPorID(Guid id)
+        public ActionResult<ListarStatusTransferenciaDTO> BuscarPorID(Guid id)
         {
             try
             {
-                ListarStatusPatrimonioDTO statusP = _service.BuscarPorID(id);
+                ListarStatusTransferenciaDTO statusT = _service.BuscarPorID(id);
 
-                return Ok(statusP);
+                return Ok(statusT);
             }
             catch (DomainException ex)
             {
@@ -44,9 +42,10 @@ namespace GerenciamentoPatrimonio.Controllers
 
         }
 
+
         [HttpPost]
 
-        public ActionResult Adicionar(CriarStatusPatrimonioDTO criarDTO)
+        public ActionResult Adicionar(CriarStatusTransferenciaDTO criarDTO)
         {
             try
             {
@@ -63,7 +62,7 @@ namespace GerenciamentoPatrimonio.Controllers
 
         [HttpPut("{id}")]
 
-        public ActionResult Atualizar(Guid id, CriarStatusPatrimonioDTO attDTO)
+        public ActionResult Atualizar(Guid id, CriarStatusTransferenciaDTO attDTO)
         {
             try
             {

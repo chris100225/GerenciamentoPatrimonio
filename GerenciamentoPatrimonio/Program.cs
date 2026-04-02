@@ -28,7 +28,23 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAreaRepository, AreaRepository>();
 builder.Services.AddScoped<AreaService>();
 
-//Áreas
+//Patrimonio
+builder.Services.AddScoped<IPatrimonioRepository, PatrimonioRepository>();
+builder.Services.AddScoped<PatrimonioService>();
+
+//Tipo Patrimônio
+builder.Services.AddScoped<ITipoPatrimonioRepository, TipoPatrimonioRepository>();
+builder.Services.AddScoped<TipoPatrimonioService>();
+
+//Tipo Alteração
+builder.Services.AddScoped<ITipoAlteracaoRepository, TipoAlteracaoRepository>();
+builder.Services.AddScoped<TipoAlteracaoService>();
+
+//Status Transferência
+builder.Services.AddScoped<IStatusTansferenciaRepository, StatusTransferenciaRepository>();
+builder.Services.AddScoped<StatusTransferenciaService>();
+
+//Status Patrimonio
 builder.Services.AddScoped<IStatusPatrimonioRepository, StatusPatrimonioRepository>();
 builder.Services.AddScoped<StatusPatrimonioService>();
 

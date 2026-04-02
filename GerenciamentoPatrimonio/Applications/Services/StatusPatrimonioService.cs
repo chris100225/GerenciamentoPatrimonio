@@ -88,9 +88,9 @@ namespace GerenciamentoPatrimonio.Applications.Services
                 throw new DomainException("Esse status de patrimonio já está cadastrado");
             }
 
-            statusBanco.NomeStatus = attDTO.NomeTipo;
+            statusBanco.NomeStatus = attDTO.NomeStatus;
 
-            _repository.Atualizar(tipoBanco);
+            _repository.Atualizar(statusBanco);
         }
     }
 }
