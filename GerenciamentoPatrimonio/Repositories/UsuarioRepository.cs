@@ -107,7 +107,7 @@ namespace GerenciamentoPatrimonio.Repositories
         }
 
 
-        public Usuario ObterPorNIFTipoUser(string nif)
+        public Usuario ObterPorNIFComTipoUser(string nif)
         {
             return _context.Usuario.Include(usuario => usuario.TipoUsuario)
                 .FirstOrDefault(usuario => usuario.NIF == nif);
@@ -142,3 +142,4 @@ namespace GerenciamentoPatrimonio.Repositories
             }
         }
     }
+}

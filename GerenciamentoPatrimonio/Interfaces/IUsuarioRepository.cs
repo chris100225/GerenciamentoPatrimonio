@@ -20,7 +20,7 @@ namespace GerenciamentoPatrimonio.Interfaces
 
         void Atualizar(Usuario usuario);
 
-        void AtualzarStatus(Usuario usuario);
+        void AtualizarStatus(Usuario usuario);
 
         Usuario ObterPorNIFComTipoUser(string nif);
     

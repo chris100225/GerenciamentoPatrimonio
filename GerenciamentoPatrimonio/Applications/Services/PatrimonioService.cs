@@ -66,10 +66,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
                 throw new DomainException("Local informado não existe.");
             }
 
-            if (!_repository.TipoPatrimonioExiste(criarDTO.TipoPatrimonioID))
-            {
-                throw new DomainException("Tipo Patrimonio informado não existe.");
-            }
+
 
             if (!_repository.StatusPatrimonioExiste(criarDTO.StatusPatrimonioID))
             {
@@ -115,10 +112,6 @@ namespace GerenciamentoPatrimonio.Applications.Services
                 throw new DomainException("Local informado não existe.");
             }
 
-            if (!_repository.TipoPatrimonioExiste(attDTO.TipoPatrimonioID))
-            {
-                throw new DomainException("Tipo Patrimonio informado não existe.");
-            }
 
             if (!_repository.StatusPatrimonioExiste(attDTO.StatusPatrimonioID))
             {

@@ -32,17 +32,21 @@ public partial class GerenciamentoPatrimonioContext : DbContext
 
     public virtual DbSet<Patrimonio> Patrimonio { get; set; }
 
+    public virtual DbSet<SolicitacaoTransferencia> SolicitacaoTransferencia { get; set; }
+
     public virtual DbSet<StatusPatrimonio> StatusPatrimonio { get; set; }
 
     public virtual DbSet<StatusTransferencia> StatusTransferencia { get; set; }
 
     public virtual DbSet<TipoAlteracao> TipoAlteracao { get; set; }
 
-    public virtual DbSet<TipoPatrimonio> TipoPatrimonio { get; set; }
-
     public virtual DbSet<TipoUsuario> TipoUsuario { get; set; }
 
     public virtual DbSet<Usuario> Usuario { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB;Database=GerenciamentoPatrimonio;Trusted_Connection=True;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -209,11 +213,40 @@ public partial class GerenciamentoPatrimonioContext : DbContext
                 .HasForeignKey(d => d.StatusPatrimonioID)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Patrimonio_StatusPatrimonio");
+        });
 
-            entity.HasOne(d => d.TipoPatrimonio).WithMany(p => p.Patrimonio)
-                .HasForeignKey(d => d.TipoPatrimonioID)
+        modelBuilder.Entity<SolicitacaoTransferencia>(entity =>
+        {
+            entity.HasKey(e => e.SolicitacaoTransferenciaID).HasName("PK__Solicita__B4E92CD2944D74D5");
+
+            entity.Property(e => e.SolicitacaoTransferenciaID).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.DataCriacaoSolicitacao).HasPrecision(0);
+            entity.Property(e => e.DataResposta).HasPrecision(0);
+            entity.Property(e => e.Justificativa).IsUnicode(false);
+
+            entity.HasOne(d => d.Local).WithMany(p => p.SolicitacaoTransferencia)
+                .HasForeignKey(d => d.LocalID)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Patrimonio_TipoPatrimonio");
+                .HasConstraintName("FK_SolicitacaoTransferencia_Local");
+
+            entity.HasOne(d => d.Patrimonio).WithMany(p => p.SolicitacaoTransferencia)
+                .HasForeignKey(d => d.PatrimonioID)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_SolicitacaoTransferencia_Patrimonio");
+
+            entity.HasOne(d => d.StatusTransferencia).WithMany(p => p.SolicitacaoTransferencia)
+                .HasForeignKey(d => d.StatusTransferenciaID)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_SolicitacaoTransferencia_StatusTransferencia");
+
+            entity.HasOne(d => d.UsuarioIDAprovacaoNavigation).WithMany(p => p.SolicitacaoTransferenciaUsuarioIDAprovacaoNavigation)
+                .HasForeignKey(d => d.UsuarioIDAprovacao)
+                .HasConstraintName("FK_SolicitacaoTransferencia_UsuarioAprovacao");
+
+            entity.HasOne(d => d.UsuarioIDSolicitacaoNavigation).WithMany(p => p.SolicitacaoTransferenciaUsuarioIDSolicitacaoNavigation)
+                .HasForeignKey(d => d.UsuarioIDSolicitacao)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_SolicitacaoTransferencia_UsuarioSolicitacao");
         });
 
         modelBuilder.Entity<StatusPatrimonio>(entity =>
@@ -247,18 +280,6 @@ public partial class GerenciamentoPatrimonioContext : DbContext
             entity.HasIndex(e => e.NomeTipo, "UQ__TipoAlte__7859A10ADDED79E3").IsUnique();
 
             entity.Property(e => e.TipoAlteracaoID).HasDefaultValueSql("(newid())");
-            entity.Property(e => e.NomeTipo)
-                .HasMaxLength(50)
-                .IsUnicode(false);
-        });
-
-        modelBuilder.Entity<TipoPatrimonio>(entity =>
-        {
-            entity.HasKey(e => e.TipoPatrimonioID).HasName("PK__TipoPatr__4DC9FF9908DEB037");
-
-            entity.HasIndex(e => e.NomeTipo, "UQ__TipoPatr__7859A10A673471D2").IsUnique();
-
-            entity.Property(e => e.TipoPatrimonioID).HasDefaultValueSql("(newid())");
             entity.Property(e => e.NomeTipo)
                 .HasMaxLength(50)
                 .IsUnicode(false);

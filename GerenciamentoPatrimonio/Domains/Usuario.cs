@@ -37,6 +37,10 @@ public partial class Usuario
 
     public virtual ICollection<LogPatrimonio> LogPatrimonio { get; set; } = new List<LogPatrimonio>();
 
+    public virtual ICollection<SolicitacaoTransferencia> SolicitacaoTransferenciaUsuarioIDAprovacaoNavigation { get; set; } = new List<SolicitacaoTransferencia>();
+
+    public virtual ICollection<SolicitacaoTransferencia> SolicitacaoTransferenciaUsuarioIDSolicitacaoNavigation { get; set; } = new List<SolicitacaoTransferencia>();
+
     public virtual TipoUsuario TipoUsuario { get; set; } = null!;
 
     public virtual ICollection<Localizacao> Localizacao { get; set; } = new List<Localizacao>();

@@ -196,7 +196,7 @@ namespace GerenciamentoPatrimonio.Applications.Services
             }
 
             usuarioBanco.Ativo = attStatusDTO.Ativo;
-            _repository.AtualzarStatus(usuarioBanco);
+            _repository.AtualizarStatus(usuarioBanco);
         }
     }
 }

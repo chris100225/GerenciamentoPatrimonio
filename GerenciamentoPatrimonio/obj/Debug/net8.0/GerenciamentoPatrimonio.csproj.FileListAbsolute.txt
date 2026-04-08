@@ -148,3 +148,4 @@ C:\Users\42332992820\Documents\GerenciamentoPatrimonio\GerenciamentoPatrimonio\o
 C:\Users\42332992820\Documents\GerenciamentoPatrimonio\GerenciamentoPatrimonio\bin\Debug\net8.0\DotNetEnv.dll
 C:\Users\42332992820\Documents\GerenciamentoPatrimonio\GerenciamentoPatrimonio\bin\Debug\net8.0\Sprache.dll
 C:\Users\42332992820\Documents\GerenciamentoPatrimonio\GerenciamentoPatrimonio\obj\Debug\net8.0\GerenciamentoPatrimonio.sourcelink.json
+C:\Users\42332992820\Documents\GerenciamentoPatrimonio\GerenciamentoPatrimonio\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
