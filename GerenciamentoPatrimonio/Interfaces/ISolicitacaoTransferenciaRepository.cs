@@ -18,6 +18,17 @@ namespace GerenciamentoPatrimonio.Interfaces
         void Adicionar(SolicitacaoTransferencia solicitacaoTransferencia);
 
         bool LocalizacaoExiste(Guid localizacaoID);
+
         Patrimonio BuscarPatrimonioPorID(Guid patrimonioID);
+
+        StatusPatrimonio BuscarPorPatrimonioNome(string nomeStatus);
+
+        TipoAlteracao BuscarTipoAlteracaoPorNome(string nomeTipo);
+
+        void Atualizar(SolicitacaoTransferencia solicitacaoTranferencia);
+
+        void AtualizarPatrimonio(Patrimonio patrimonio);
+
+        void AdicionarLog(LogPatrimonio logPatrimonio);
     }
 }
