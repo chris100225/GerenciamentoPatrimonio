@@ -63,6 +63,13 @@ namespace GerenciamentoPatrimonio.Applications.Regras
                 throw new DomainException("Justificativa é obriatória");
             }
         }
+        public static void ValidarNumeroPatrimonio(string numeroPatrimonio)
+        {
+            if (string.IsNullOrWhiteSpace(numeroPatrimonio))
+            {
+                throw new DomainException("Patrimonio é obriatória");
+            }
+        }
 
 
     }
