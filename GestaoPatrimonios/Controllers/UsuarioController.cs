@@ -2,7 +2,6 @@
 using GestaoPatrimonios.DTOs.UsuarioDto;
 using GestaoPatrimonios.Exceptions;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GestaoPatrimonios.Controllers
@@ -34,7 +33,7 @@ namespace GestaoPatrimonios.Controllers
             {
                 ListarUsuarioDto usuario = _service.BuscarPorId(id);
                 return Ok(usuario);
-            } 
+            }
             catch (DomainException ex)
             {
                 return NotFound(ex.Message);
@@ -80,11 +79,10 @@ namespace GestaoPatrimonios.Controllers
                 _service.AtualizarStatus(id, dto);
                 return NoContent();
             }
-            catch(DomainException ex)
+            catch (DomainException ex)
             {
                 return BadRequest(ex.Message);
             }
         }
-
     }
 }

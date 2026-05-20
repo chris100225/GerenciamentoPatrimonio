@@ -25,7 +25,12 @@ namespace GestaoPatrimonios.Repositories
             return _context.Endereco.Find(enderecoId);
         }
 
-        public Endereco BuscarPorLogradouroENumero(string logradouro, int? numero, Guid bairroId, Guid? enderecoId = null)
+        public Endereco BuscarPorLogradouroENumero(
+            string logradouro,
+            int? numero,
+            Guid bairroId,
+            Guid? enderecoId = null
+        )
         {
             var consulta = _context.Endereco.AsQueryable();
 
@@ -54,11 +59,6 @@ namespace GestaoPatrimonios.Repositories
 
         public void Atualizar(Endereco endereco)
         {
-            if (endereco == null)
-            {
-                return;
-            }
-
             Endereco enderecoBanco = _context.Endereco.Find(endereco.EnderecoID);
 
             if (enderecoBanco == null)
@@ -69,6 +69,7 @@ namespace GestaoPatrimonios.Repositories
             enderecoBanco.Logradouro = endereco.Logradouro;
             enderecoBanco.Numero = endereco.Numero;
             enderecoBanco.Complemento = endereco.Complemento;
+            enderecoBanco.CEP = endereco.CEP;
             enderecoBanco.BairroID = endereco.BairroID;
 
             _context.SaveChanges();

@@ -84,6 +84,10 @@ builder.Services.AddScoped<StatusPatrimonioService>();
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
 
+builder.Services.AddScoped<ICidadeRepository, CidadeRepository>();
+builder.Services.AddScoped<IBairroRepository, BairroRepository>();
+builder.Services.AddScoped<IEnderecoRepository, EnderecoRepository>();
+
 // LogPatrimonio
 builder.Services.AddScoped<ILogPatrimonioRepository, LogPatrimonioRepository>();
 builder.Services.AddScoped<LogPatrimonioService>();

@@ -15,7 +15,9 @@ namespace GestaoPatrimonios.Repositories
 
         public List<Cidade> Listar()
         {
-            return _context.Cidade.OrderBy(cidade => cidade.NomeCidade).ToList();
+            return _context.Cidade
+                .OrderBy(cidade => cidade.NomeCidade)
+                .ToList();
         }
 
         public Cidade BuscarPorId(Guid cidadeId)
@@ -27,7 +29,8 @@ namespace GestaoPatrimonios.Repositories
         {
             return _context.Cidade.FirstOrDefault(cidade =>
                 cidade.NomeCidade.ToLower() == nomeCidade.ToLower() &&
-                cidade.Estado.ToLower() == estado.ToLower());
+                cidade.Estado.ToLower() == estado.ToLower()
+            );
         }
 
         public void Adicionar(Cidade cidade)
@@ -38,11 +41,6 @@ namespace GestaoPatrimonios.Repositories
 
         public void Atualizar(Cidade cidade)
         {
-            if (cidade == null)
-            {
-                return;
-            }
-
             Cidade cidadeBanco = _context.Cidade.Find(cidade.CidadeID);
 
             if (cidadeBanco == null)

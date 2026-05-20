@@ -1,6 +1,7 @@
 ﻿using GestaoPatrimonios.Contexts;
 using GestaoPatrimonios.Domains;
 using GestaoPatrimonios.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestaoPatrimonios.Repositories
 {
@@ -22,6 +23,11 @@ namespace GestaoPatrimonios.Repositories
         public Localizacao BuscarPorId(Guid localizacaoId)
         {
             return _context.Localizacao.Find(localizacaoId);
+        }
+
+        public bool UsuarioExiste(Guid usuarioId)
+        {
+            return _context.Usuario.Any(usuario => usuario.UsuarioID == usuarioId);
         }
 
         public void Adicionar(Localizacao localizacao)
@@ -53,6 +59,24 @@ namespace GestaoPatrimonios.Repositories
             localizacaoBanco.LocalSAP = localizacao.LocalSAP;
             localizacaoBanco.DescricaoSAP = localizacao.DescricaoSAP;
             localizacaoBanco.AreaID = localizacao.AreaID;
+
+            _context.SaveChanges();
+        }
+
+        public void VincularUsuario(Guid localizacaoId, Guid usuarioId)
+        {
+            Localizacao localizacao = _context.Localizacao
+                .Include(local => local.Usuario)
+                .FirstOrDefault(local => local.LocalizacaoID == localizacaoId);
+
+            Usuario usuario = _context.Usuario.Find(usuarioId);
+
+            if (localizacao == null || usuario == null)
+            {
+                return;
+            }
+
+            localizacao.Usuario.Add(usuario);
 
             _context.SaveChanges();
         }

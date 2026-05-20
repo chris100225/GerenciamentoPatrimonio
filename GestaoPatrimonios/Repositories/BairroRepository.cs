@@ -25,6 +25,19 @@ namespace GestaoPatrimonios.Repositories
             return _context.Bairro.Find(bairroId);
         }
 
+        public Bairro BuscarPorNome(string nomeBairro, Guid cidadeId)
+        {
+            return _context.Bairro.FirstOrDefault(bairro =>
+                bairro.NomeBairro.ToLower() == nomeBairro.ToLower() &&
+                bairro.CidadeID == cidadeId
+            );
+        }
+
+        public bool CidadeExiste(Guid cidadeId)
+        {
+            return _context.Cidade.Any(cidade => cidade.CidadeID == cidadeId);
+        }
+
         public void Adicionar(Bairro bairro)
         {
             _context.Bairro.Add(bairro);
@@ -33,11 +46,6 @@ namespace GestaoPatrimonios.Repositories
 
         public void Atualizar(Bairro bairro)
         {
-            if (bairro == null)
-            {
-                return;
-            }
-
             Bairro bairroBanco = _context.Bairro.Find(bairro.BairroID);
 
             if (bairroBanco == null)
@@ -49,19 +57,6 @@ namespace GestaoPatrimonios.Repositories
             bairroBanco.CidadeID = bairro.CidadeID;
 
             _context.SaveChanges();
-        }
-
-        public Bairro BuscarPorNome(string nomeBairro, Guid cidadeId)
-        {
-            return _context.Bairro.FirstOrDefault(b =>
-                b.NomeBairro.ToLower() == nomeBairro.ToLower() &&
-                b.CidadeID == cidadeId
-            );
-        }
-
-        public bool CidadeExiste(Guid cidadeId)
-        {
-            return _context.Cidade.Any(c => c.CidadeID == cidadeId);
         }
     }
 }
