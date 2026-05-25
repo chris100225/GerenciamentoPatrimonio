@@ -81,7 +81,7 @@ builder.Services.AddScoped<StatusPatrimonioService>();
 
 
 // Usuários
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+builder.Services.AddScoped< IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<UsuarioService>();
 
 builder.Services.AddScoped<ICidadeRepository, CidadeRepository>();
@@ -103,6 +103,10 @@ builder.Services.AddScoped<StatusTransferenciaService>();
 // TipoAlteracao
 builder.Services.AddScoped<ITipoAlteracaoRepository, TipoAlteracaoRepository>();
 builder.Services.AddScoped<TipoAlteracaoService>();
+
+// TipoUsuario
+builder.Services.AddScoped<ITipoUsuarioRepository, TipoUsuarioRepository>();
+builder.Services.AddScoped<TipoUsuarioService>();
 
 // Patrimonio
 builder.Services.AddScoped<IPatrimonioRepository, PatrimonioRepository>();

@@ -17,7 +17,7 @@ namespace GestaoPatrimonios.Controllers
             _service = service;
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public ActionResult<List<ListarUsuarioDto>> Listar()
         {
@@ -25,7 +25,7 @@ namespace GestaoPatrimonios.Controllers
             return Ok(usuarios);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public ActionResult<ListarUsuarioDto> BuscarPorId(Guid id)
         {
@@ -40,7 +40,7 @@ namespace GestaoPatrimonios.Controllers
             }
         }
 
-        [Authorize(Roles = "Coordenador")]
+        //[Authorize(Roles = "Coordenador")]
         [HttpPost]
         public ActionResult Adicionar(CriarUsuarioDto dto)
         {
@@ -55,7 +55,7 @@ namespace GestaoPatrimonios.Controllers
             }
         }
 
-        [Authorize(Roles = "Coordenador")]
+        //[Authorize(Roles = "Coordenador")]
         [HttpPut("{id}")]
         public ActionResult Atualizar(Guid id, CriarUsuarioDto dto)
         {

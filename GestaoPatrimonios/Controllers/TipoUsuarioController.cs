@@ -40,7 +40,7 @@ namespace GestaoPatrimonios.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Coordenador")]
+        //[Authorize(Roles = "Coordenador")]
         public ActionResult Adicionar(CriarTipoUsuarioDto dto)
         {
             try
