@@ -1,0 +1,84 @@
+.topbar {
+    height: 78px;
+    background-color: #cf2929;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    display: flex;
+    justify-content: center;
+}
+
+
+.navbar {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logoLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo {
+    width: 135px;
+    display: block;
+}
+
+
+.menuList {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.menuLink {
+    color: #ffffff;
+    font-size: var(--tamanho-fonte-padrao);
+    font-weight: 700;
+}
+
+
+.userArea {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    color: #ffffff;
+}
+
+
+.userIcon {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffffff;
+    color: #cf2929;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-info strong,
+.user-info span {
+    font-size: var(--tamanho-fonte-padrao);
+}
+
+.arrow-button,
+.hamburguer {
+    border: none;
+    background-color: transparent;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.hamburguer {
+    display: none;
+}
