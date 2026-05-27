@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const apiLocal = "http://localhost:5164/api/";
+const apiLocal = "https://localhost:7063/api/";
 
 const apiRemota = "";
 

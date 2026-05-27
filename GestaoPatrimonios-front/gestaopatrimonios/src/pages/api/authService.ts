@@ -1,10 +1,11 @@
 import { api } from "./api";
 import secureLocalStorage from "react-secure-storage";
 
-export async function login(email: string, senha: string) {
+export async function login(nif: string, senha: string) {
     try {
-        //requisição:
-        const response = await api.post("Autenticacao/login", { email, senha });
+        const response = await api.post("Autenticacao/login", { nif, senha });
+
+        console.log("Resposta da API:", response.data); // Verifique o nome da chave aqui
 
         const token = response.data.token;
 

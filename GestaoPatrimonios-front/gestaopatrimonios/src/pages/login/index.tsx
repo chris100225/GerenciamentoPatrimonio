@@ -1,26 +1,26 @@
 import { useState } from "react";
 import styles from "./login.module.css";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import { login } from "../api/authService";
-import Header from "@/components/header";
+import { sucesso } from "@/utils/toast";
 
 const Login = () => {
 
-    const [email, setEmail] = useState("");
+    const [nif, setNif] = useState("");
     const [senha, setSenha] = useState("");
 
     const router = useRouter();
-    const notificacao = (msg: string) => toast.success(msg);
+    const sucess = (msg: string) => toast.success(msg);
     const erro = (msg: string) => toast.error(msg);
 
     async function autenticar(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
         try {
-            await login(email, senha);
-            notificacao("Login realizado com sucesso!");
-            router.push("/listaPorSala");
+            await login(nif, senha);
+            sucesso("Login realizado com sucesso!");
+            router.push("/local");
         } catch (error: any) {
             erro(error.message);
         }
@@ -47,7 +47,7 @@ const Login = () => {
                         <div className={styles.formGroup}>
                             <label htmlFor="nif">NIF:</label>
                             <input type="text" id="nif" name="nif" placeholder="Insira o seu NIF"
-                                required value={email} onChange={(e) => setEmail(e.target.value)} />
+                                required value={nif} onChange={(e) => setNif(e.target.value)} />
                         </div>
                         <div className={styles.formGroup}>
                             <label htmlFor="senha">Senha:</label>

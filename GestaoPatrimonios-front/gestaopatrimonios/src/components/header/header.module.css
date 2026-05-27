@@ -6,7 +6,6 @@
     justify-content: center;
 }
 
-
 .navbar {
     height: 100%;
     display: flex;
@@ -14,9 +13,8 @@
     align-items: center;
 }
 
-.logoLink {
-    color: inherit;
-    text-decoration: none;
+.layout_guide {
+    width: min(80%, 1520px);
 }
 
 .logo {
@@ -24,22 +22,20 @@
     display: block;
 }
 
-
-.menuList {
+.menu-list {
     list-style: none;
     display: flex;
     justify-content: center;
     gap: 100px;
 }
 
-.menuLink {
+.menu-link {
     color: #ffffff;
     font-size: var(--tamanho-fonte-padrao);
     font-weight: 700;
 }
 
-
-.userArea {
+.user-area {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -47,8 +43,7 @@
     color: #ffffff;
 }
 
-
-.userIcon {
+.user-icon {
     width: 50px;
     height: 50px;
     border: none;
@@ -58,7 +53,6 @@
     font-size: 26px;
     cursor: pointer;
 }
-
 
 .user-info {
     display: flex;
@@ -81,4 +75,17 @@
 
 .hamburguer {
     display: none;
+}
+
+/* RESPONSIVO HEADER */
+@media (max-width: 1200px) {
+
+    .menu-list,
+    .user-area {
+        display: none;
+    }
+
+    .hamburguer {
+        display: block;
+    }
 }
